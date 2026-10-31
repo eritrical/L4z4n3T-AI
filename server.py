@@ -3,11 +3,11 @@ import json
 import shlex
 import os
 from mcp.server.fastmcp import FastMCP
+from subdomain_enum import run_subdomain_enumeration
 
 mcp = FastMCP("L4z4n3T-FullSuite-Core")
 
 def get_wordlist():
-    """Mencari wordlist umum yang tersedia di sistem secara otomatis."""
     common_paths = [
         "/usr/share/wordlists/dirb/common.txt",
         "/usr/share/wordlists/seclists/Discovery/Web-Content/common.txt",
@@ -16,7 +16,7 @@ def get_wordlist():
     for path in common_paths:
         if os.path.exists(path):
             return path
-    return "common.txt"  # Fallback
+    return "common.txt"
 
 @mcp.tool()
 def intelligent_nmap_scan(target: str, intensity: str = "comprehensive") -> str:
@@ -27,6 +27,15 @@ def intelligent_nmap_scan(target: str, intensity: str = "comprehensive") -> str:
         return result.stdout or result.stderr
     except Exception as e:
         return f"Error Nmap: {str(e)}"
+
+@mcp.tool()
+def intelligent_subdomain_enum(domain: str) -> str:
+    """Melakukan pencarian subdomain dan memverifikasi host web aktif secara paralel."""
+    try:
+        results = run_subdomain_enumeration(domain)
+        return results
+    except Exception as e:
+        return f"Error Subdomain Enumeration: {str(e)}"
 
 @mcp.tool()
 def web_directory_fuzzing(target_url: str) -> str:
