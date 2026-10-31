@@ -71,7 +71,7 @@ def generate_html_report(target_name: str, execution_log: str) -> str:
         <div class="meta">
             <p><strong>Target:</strong> {target_name}</p>
             <p><strong>Waktu Eksekusi:</strong> {timestamp}</p>
-            <p><strong>Engine:</strong> L4z4n3T-AI Core + DeepSeek-Coder (MCP)</p>
+            <p><strong>Author / Engine:</strong> L4z4n3T | DeepSeek-Coder + MCP</p>
         </div>
         <h2>Execution & Findings Log</h2>
         <pre>{execution_log}</pre>
