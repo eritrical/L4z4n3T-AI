@@ -34,9 +34,62 @@ Pastikan Anda menggunakan sistem berbasis Linux (disarankan **Kali Linux**) deng
 
 ---
 
-## ⚙️ Instalasi & Cara Menjalankan
+## ⚙️ Instalasi
 
 1. **Clone repository ini:**
    ```bash
    git clone [https://github.com/L4z4n3T/L4z4n3T-AI.git](https://github.com/L4z4n3T/L4z4n3T-AI.git)
    cd L4z4n3T-AI
+
+   Buka terminal Anda dan arahkan ke dalam folder L4z4n3T-AI:
+Bash
+
+cd /path/ke/folder/L4z4n3T-AI
+
+2. Pastikan Ollama & Model AI Aktif
+
+Platform ini digerakkan oleh LLM lokal via Ollama. Pastikan layanan Ollama sudah berjalan dan model deepseek-coder:6.7b sudah terunduh:
+
+    Di terminal pertama (atau jalankan di background):
+    Bash
+
+    ollama serve
+
+    Di terminal kedua, pastikan modelnya ada:
+    Bash
+
+    ollama pull deepseek-coder:6.7b
+
+3. Instal Dependensi Python (Pertama Kali Saja)
+
+Jika Anda belum menginstal library pendukung (mcp, rich, requests), jalankan:
+Bash
+
+pip install -r requirements.txt
+
+4. Jalankan Platform L4z4n3T-AI
+
+Eksekusi file client utama untuk memulai program:
+Bash
+
+python client.py
+
+5. Berinteraksi dengan Agen AI
+
+    Setelah banner keren buatan L4z4n3T muncul, agen akan otomatis terhubung ke MCP Server (server.py).
+
+    Anda akan diminta memasukkan target pada prompt:
+    Plaintext
+
+    [?] Masukkan target IP / Domain / Instruksi Operasi
+
+    (Contoh input: scan domain target.com dan cari kerentanannya atau 192.168.1.10)
+
+    Human-in-the-Loop: Setiap kali AI memilih sebuah tool (seperti Nmap atau Subdomain Enum), terminal akan menampilkan tabel parameter dan bertanya:
+    Plaintext
+
+    [?] Izinkan L4z4n3T-AI mengeksekusi perintah ini secara nyata? (y/n):
+
+    Tekan y untuk mengizinkan agen melanjutkan eksekusi, atau n untuk membatalkan.
+
+    Hasil Otomatis: Setelah misi selesai atau dihentikan, agen L4z4n3T-AI akan otomatis merangkum seluruh hasil temuannya dan menghasilkan file laporan berformat HTML di dalam folder proyek (contoh: L4z4n3T_Report_target.com.html).
