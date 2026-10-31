@@ -4,6 +4,7 @@ import re
 import sys
 import os
 import requests
+from reporter import generate_html_report
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from rich.console import Console
