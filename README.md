@@ -38,5 +38,5 @@ Pastikan Anda menggunakan sistem berbasis Linux (disarankan **Kali Linux**) deng
 
 1. **Clone repository ini:**
    ```bash
-   git clone [https://github.com/username/L4z4n3T-AI.git](https://github.com/username/L4z4n3T-AI.git)
+   git clone [https://github.com/L4z4n3T/L4z4n3T-AI.git](https://github.com/L4z4n3T/L4z4n3T-AI.git)
    cd L4z4n3T-AI
