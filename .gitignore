@@ -1,10 +1,7 @@
-# Python cache & virtual environment
 __pycache__/
 *.py[cod]
-*$py.class
 venv/
 env/
 .venv/
-
-# System files
+*.html
 .DS_Store
