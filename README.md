@@ -40,12 +40,6 @@ Pastikan Anda menggunakan sistem berbasis Linux (disarankan **Kali Linux**) deng
    ```bash
    git clone [https://github.com/L4z4n3T/L4z4n3T-AI.git](https://github.com/L4z4n3T/L4z4n3T-AI.git)
    cd L4z4n3T-AI
-
-   Buka terminal Anda dan arahkan ke dalam folder L4z4n3T-AI:
-Bash
-
-cd /path/ke/folder/L4z4n3T-AI
-
 2. Pastikan Ollama & Model AI Aktif
 
 Platform ini digerakkan oleh LLM lokal via Ollama. Pastikan layanan Ollama sudah berjalan dan model deepseek-coder:6.7b sudah terunduh:
